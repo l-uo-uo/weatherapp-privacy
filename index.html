@@ -25,18 +25,15 @@ ul,ol { padding-left:24px; }
 
 <h3>一、我们收集哪些信息</h3>
 <p>位置（可选）：您允许后，通过 iOS 定位服务获取经纬度与精度，用于确定所在城市、显示当地天气与区域预警。仅申请“使用 App 期间”的位置，不申请后台定位；坐标只用于向气象服务商查询天气，不用于广告。您可以拒绝，改为手动添加城市。</p>
-<p>通知（可选）：您允许后，通过 Apple 推送服务（APNs）发送关注城市的气象预警与降雨提醒，使用系统生成的推送标识完成投递。</p>
-<p>相册（可选）：仅申请“添加照片”权限，把您主动保存的天气图片写入相册，不读取相册中的其他照片。</p>
-<p>设备与使用信息：在您同意本政策后收集设备机型、iOS 版本、App 版本与构建号、屏幕尺寸、网络类型、IP 地址、IDFV、系统语言与地区、请求时间，用于统计与故障排查。</p>
+<p>通知（可选）：您允许后，App 使用<strong>本地通知</strong>推送关注城市的气象预警与降雨提醒，不使用 APNs 远程推送。App 被完全关闭后，本地通知无法触发。</p>
 <p>本地设置：关注城市列表、温度单位、通知开关、隐私政策同意状态保存在手机本地，不上传服务器。</p>
-<p>我们不会收集您的 IDFA，也不收集 IMEI、MAC 地址、设备序列号、UDID、通讯录、通话记录、已安装应用列表或相册内容；不保存位置轨迹，不结合位置信息做用户画像。</p>
+<p>本App<strong>不接入任何统计、崩溃分析SDK，不会收集机型、iOS版本、IP地址、IDFV等设备与使用信息</strong>。</p>
+<p>我们不会收集您的 IDFA，也不收集 IMEI、MAC 地址、设备序列号、UDID、通讯录、通话记录、已安装应用列表或相册内容；不保存位置轨迹，不结合位置信息做用户画像；本App不申请相册权限，不存在保存图片到相册的功能。</p>
 
 <h3>二、我们如何使用这些信息</h3>
 <ul>
 <li>展示您所关注城市的实况、预报、空气质量、生活指数与气象预警；</li>
-<li>下发您订阅的预警与降雨提醒；</li>
-<li>生成可保存、可分享的天气图片；</li>
-<li>排查崩溃与兼容性问题，优化性能，识别异常请求；</li>
+<li>下发您订阅的预警与降雨提醒（本地通知）；</li>
 <li>履行法律法规要求。</li>
 </ul>
 <p>除上述目的外，我们不会将您的信息用于其他用途，除非另行征得您的同意。</p>
@@ -44,14 +41,13 @@ ul,ol { padding-left:24px; }
 <h3>三、共享与第三方服务</h3>
 <p>我们不出售您的个人信息，不将其提供给第三方用于其自身的广告营销。仅在法律要求、司法或行政机关依法要求，或为保护用户与他人安全所必需时，才会对外提供。为运行功能，本App 使用以下服务，且均在您同意本政策后才初始化：</p>
 <ul>
-<li>Apple 系统服务定位、推送、相册写入、桌面小组件（Core Location、APNs、Photos、WidgetKit）</li>
-<li>气象数据服务商接收城市名称或经纬度、IP 地址与请求时间，返回天气数据</li>
-<li>本公司的统计服务接收设备与使用信息，用于统计、崩溃分析与安全风控</li>
+<li>Apple 系统服务定位、本地通知、桌面小组件（Core Location、UserNotifications、WidgetKit）</li>
+<li>气象数据服务商接收城市名称或经纬度、请求时间，返回天气数据</li>
 </ul>
-<p>上述服务依其自身隐私政策处理信息，Apple 系统服务适用 Apple 的隐私政策。</p>
+<p>上述服务依其自身隐私政策处理信息，Apple 系统服务适用 Apple 的隐私政策。气象服务商的数据传输、存储规则由服务商自身隐私政策约束，我方不做跨境或境内存储承诺。</p>
 
 <h3>四、保存与保护</h3>
-<p>位置与设置只留在您的手机里，卸载 App 即删除；保存的图片只在您的相册中；统计数据在实现目的所需的最短期限内保存。相关信息均在中华人民共和国境内存储，不向境外传输。本App 数据存放于 iOS 沙盒并受系统加密保护，传输采用 HTTPS（符合 Apple 传输安全要求），内部实行最小授权与访问审计。若您开启了 iCloud 备份，备份由 Apple 依其条款管理。</p>
+<p>位置与设置只留在您的手机里，卸载 App 即删除。本App 数据存放于 iOS 沙盒并受系统加密保护，网络请求采用 HTTPS（符合 Apple 传输安全要求）。若您开启了 iCloud 备份，备份由 Apple 依其条款管理。</p>
 
 <h3>五、您的权利</h3>
 <ol>
@@ -83,18 +79,15 @@ ul,ol { padding-left:24px; }
 
 <h3>1. Information We Collect</h3>
 <p>Location (Optional): With your permission, we obtain GPS coordinates through iOS Core Location to show local weather and alerts. We only request location “while using the app”, no background location. Coordinates are only sent to weather providers and not used for advertising. You may deny location and add cities manually.</p>
-<p>Notifications (Optional): With your permission, Apple Push Notification service (APNs) delivers weather alerts and rain reminders for your followed cities.</p>
-<p>Photo Library (Optional): We only request “Add Photos” permission to save generated weather images to your album. We do not read other photos.</p>
-<p>Device & Usage Data: After your consent, we collect device model, iOS version, app version, screen info, network type, IP address, IDFV, language & region, request timestamp for crash reporting and analytics.</p>
+<p>Notifications (Optional): With your permission, the App uses <strong>local notifications only</strong> to deliver weather alerts and rain reminders for your followed cities. APNs remote push is not used. Local notifications cannot be delivered when the App is fully terminated.</p>
 <p>Local Preferences: City list, temperature unit, notification settings and policy consent status are stored locally on your device and not uploaded to servers.</p>
-<p>We do NOT collect IDFA, IMEI, MAC address, serial number, UDID, contacts, call logs, installed app list or full photo library. We do not track location history or build user profiles.</p>
+<p>This App <strong>does not integrate any analytics or crash SDK, and does not collect device model, iOS version, IP address, IDFV or other usage data.</strong></p>
+<p>We do NOT collect IDFA, IMEI, MAC address, serial number, UDID, contacts, call logs, installed app list or photo library content. We do not track location history or build user profiles. The App does not request photo library permission and has no function to save images to album.</p>
 
 <h3>2. How We Use Information</h3>
 <ul>
 <li>Show real-time weather, forecasts, air quality, indices and weather alerts for your selected cities;</li>
-<li>Send subscribed weather and rain alerts;</li>
-<li>Generate shareable weather images;</li>
-<li>Fix crashes, improve performance and detect abnormal traffic;</li>
+<li>Send subscribed weather and rain alerts via local notifications;</li>
 <li>Comply with legal obligations.</li>
 </ul>
 <p>We will not use your data for other purposes unless we obtain your separate consent.</p>
@@ -102,14 +95,13 @@ ul,ol { padding-left:24px; }
 <h3>3. Sharing & Third-Party Services</h3>
 <p>We do not sell your personal information or share it for third-party advertising. Data may be disclosed only when required by law, court order or necessary to protect safety. Services used in the app (initialized after your consent):</p>
 <ul>
-<li>Apple system services: Core Location, APNs, Photos, WidgetKit</li>
-<li>Weather data providers receive city name / coordinates, IP and timestamp to return weather data</li>
-<li>Our internal analytics service receives device and usage data for crash analysis and security monitoring</li>
+<li>Apple system services: Core Location, UserNotifications, WidgetKit</li>
+<li>Weather data providers receive city name / coordinates, request timestamp to return weather data</li>
 </ul>
-<p>These third parties process data under their own privacy policies. Apple services are governed by Apple’s Privacy Policy.</p>
+<p>These third parties process data under their own privacy policies. Apple services are governed by Apple’s Privacy Policy. The weather provider’s data storage and transfer rules are defined by its own privacy policy, we do not make representations on cross-border transfer.</p>
 
 <h3>4. Data Storage & Security</h3>
-<p>Location data and preferences stay on your device and are deleted when you uninstall the app. Saved pictures remain only in your photo album. Analytics data is retained only as long as necessary. All data is stored within mainland China and will not be transferred overseas. Data is stored in iOS sandbox protected by system encryption. All network traffic uses HTTPS. If you enable iCloud Backup, Apple manages backups under its own terms.</p>
+<p>Location data and preferences stay on your device and are deleted when you uninstall the app. Data is stored in iOS sandbox protected by system encryption. All network traffic uses HTTPS. If you enable iCloud Backup, Apple manages backups under its own terms.</p>
 
 <h3>5. Your Rights</h3>
 <ol>
@@ -130,4 +122,3 @@ ul,ol { padding-left:24px; }
 <p>If you have questions or complaints about this Privacy Policy, please email us at appstore24@163.com. We will respond within the time required by law. You may also file complaints with local cyberspace administration or consumer protection authorities.</p>
 </body>
 </html>
-
