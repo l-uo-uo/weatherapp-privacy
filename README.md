@@ -1,2 +1,1 @@
-# weatherapp-privacy
-天气准隐私政策
+# 天气准隐私政策
